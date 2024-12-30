@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { COLORS_TEAM_1 } from "pages/EmployeeAppProject/Layout/styles";
+import { COLORS } from "pages/EmployeeAppProject/Layout/styles";
 
-export const EmployeesCard = styled.div`
+export const EmployeesCardWrapper = styled.div`
 display: flex;
   flex-direction: column;
   width: 590px;
@@ -9,7 +9,7 @@ display: flex;
   max-height: fit-content;
   padding: 60px;
   gap: 30px;
-  background-color: ${COLORS_TEAM_1.CARD_WHITE};
+  background-color: ${COLORS.CARD_WHITE};
   border: 1px solid #000000;
   border-radius: 4px;
 `;

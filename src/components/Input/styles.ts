@@ -1,58 +1,35 @@
 import styled from "@emotion/styled";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
-import { colors } from "styles/colors";
-
-interface StyledInputProps {
-  $error: undefined | string;
-}
-
-const setBorderColor = ($error: undefined | string) => {
-  if (typeof $error === "string") {
-    return colors.ERROR;
-  } else {
-    return "black";
-  }
-};
-
-export const InputWrapper = styled("div")`
+export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 4px;
   width: 100%;
-  height: 100%;
-  gap: 15px;
 `;
 
-export const InputLabel = styled("label")`
-  font-size: 18px;
-  font-weight: 400;
-  color: black;
-`;
-
-export const InputElemnt = styled("input")<StyledInputProps>`
- 
-  outline: none;
-  width: 100%;
-  height: 100%;
+export const Label = styled.label`
   font-size: 16px;
-  background-color: white;
-  border: 1px solid;
-  border-color: ${({ $error }) => setBorderColor($error)};
-  border-radius: 4px;
+  color: ${EMPLOYEE_PROJECT_COLORS.LABELS_GRAY};
+`;
+
+export const InputElement = styled.input`
+  width: 100%;
+  height: 50px;
   padding: 12px;
-  overflow-wrap: wrap;
+  outline: none;
+  border: 1px solid ${EMPLOYEE_PROJECT_COLORS.INPUT_BORDERS_GRAY};
+  border-radius: 4px;
+  font-size: 16px;
+
   &::placeholder {
-    color: ${colors.PLACEHOLDER};
-    font-size: 16px;
-  }
-  &:disabled {
-    cursor: not-allowed;
-    &::placeholder {
-      color: black;
-    }
-    background-color: gray;
+    color: ${EMPLOYEE_PROJECT_COLORS.PLACEHOLDER_GRAY};
+    opacity: ${EMPLOYEE_PROJECT_COLORS.PLACEHOLDER_OPACITY};
   }
 `;
 
-export const ErrorContainer = styled.div`
-  color: ${colors.ERROR};
+export const ErrorMessage = styled.div`
+  height: 18px;
+  color: red;
+  font-size: 16px;
 `;

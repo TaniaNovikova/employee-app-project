@@ -6,11 +6,11 @@ import {
 } from "react";
 
 import { LayoutProps } from "pages/EmployeeAppProject/Layout/types";
-import { Employee } from "pages/EmployeeAppProject/Layout/types";
+import { EmployeeCardData } from "employeeProjectTypes"
 
 export interface EmployeeContextType {
-  employees: Employee[];
-  setEmployees: React.Dispatch<SetStateAction<Employee[]>>;
+  employees: EmployeeCardData[];
+  setEmployees: React.Dispatch<SetStateAction<EmployeeCardData[]>>;
 }
 
 
@@ -24,7 +24,7 @@ export const EmployeeAppContext = createContext<EmployeeContextType>({
 function EmployeeAppContextProvider({
   children,
 }: PropsWithChildren<LayoutProps>) {
-  const [employee, setEmployee] = useState<Employee[]>([]);
+  const [employee, setEmployee] = useState<EmployeeCardData[]>([]);
 
   
   return (

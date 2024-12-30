@@ -1,25 +1,23 @@
 import styled from "@emotion/styled";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
-export const UserDataFormContainer = styled("form")`
+export const EmployeeFormContainer = styled.form`
   display: flex;
   flex-direction: column;
-  width: 590px;
-  min-height: 450px;
-  max-height: fit-content;
-  border: 1px solid #000000;
-  padding: 60px;
-  border-radius: 4px;
-  background-color: white;
   gap: 30px;
+  width: 590px;
+  padding: 60px;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-family: Lato, Geneva, Tahoma, sans-serif;
+  background-color: ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE};
 `;
 
-export const InputContainer = styled("div")`
+export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
-export const ButtonContainer = styled("div")`
-  height: 70px;
+  width: 100%;
 `;
 
 export const ModalButton = styled.button`

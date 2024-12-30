@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Collapse } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
-export enum COLORS_TEAM_1 {
+export enum COLORS {
   BACKGROUND_BLUE = "#112233",
   HEADER_WHITE = "#FAF9FF",
   CARD_WHITE = "#FFFFFF",
@@ -12,7 +12,7 @@ export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: ${COLORS_TEAM_1.BACKGROUND_BLUE};
+  background-color: ${COLORS.BACKGROUND_BLUE};
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -21,7 +21,7 @@ export const Header = styled.header`
   justify-content: space-between;
   width: 100%;
   height: 100px;
-  background-color: ${COLORS_TEAM_1.HEADER_WHITE};
+  background-color: ${COLORS.HEADER_WHITE};
   padding: 20px 84px;
   color: black;
 `;
@@ -57,5 +57,5 @@ export const Main = styled.main`
   align-items: center;
   flex: 1;
   padding: 40px;
-  color: ${COLORS_TEAM_1.HEADER_WHITE};
+  color: ${COLORS.HEADER_WHITE};
 `;

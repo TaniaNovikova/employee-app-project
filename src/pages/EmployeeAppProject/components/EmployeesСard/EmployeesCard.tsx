@@ -1,9 +1,9 @@
-import { EmployeesCard, TextDiv, TextLabel, TextContent } from "./styles";
-import { Employee } from "pages/EmployeeAppProject/Layout/types";
+import { EmployeeCardData } from "employeeProjectTypes";
+import { TextDiv, TextLabel, TextContent, EmployeesCardWrapper } from "./styles";
 
-function Employees_Card({ name, surName, age, jobPosition }: Employee) {
+function EmployeesCard({ name, surName, age, jobPosition, id, slug }: EmployeeCardData) {
   return (
-    <EmployeesCard>
+    <EmployeesCardWrapper>
       <TextDiv>
         <TextLabel>Name</TextLabel>
         <TextContent>{name}</TextContent>
@@ -20,8 +20,8 @@ function Employees_Card({ name, surName, age, jobPosition }: Employee) {
         <TextLabel>Job Position</TextLabel>
         <TextContent>{jobPosition}</TextContent>
       </TextDiv>
-    </EmployeesCard>
+    </EmployeesCardWrapper>
   );
 }
 
-export default Employees_Card;
+export default EmployeesCard;

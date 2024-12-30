@@ -1,28 +1,32 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useContext,  useState } from "react";
+import { useContext, useState } from "react";
 import { Alert } from "@mui/material";
 
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
+import Checkbox from "components/Checkbox/Checkbox";
 import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
 
-import {
-  UserDataFormContainer,
-  InputContainer,
-  ButtonContainer,
-  ModalButton,
-} from "./styles";
-import {
-  Employee,
-  PagesPaths,
-} from "pages/EmployeeAppProject/Layout/types";
+import { ModalButton, EmployeeFormContainer, InputsContainer } from "./styles";
+import { PagesPaths } from "pages/EmployeeAppProject/Layout/types";
 import Modal from "components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
+import { EMPLOYEE_FORM_NAMES } from "enums";
+import { EmployeeCardData, EmployeeFormValue } from "employeeProjectTypes";
 
 function CreateEmployeeForm() {
   const employeeDataContext = useContext(EmployeeAppContext);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
+  const [employeeCardData, setEmployeeCardData] = useState<EmployeeCardData>({
+    name: "",
+    surName: "",
+    age: 0,
+    jobPosition: "",
+    id: 0,
+    slug: "0",
+  });
+
   const navigate = useNavigate();
 
   const onModalClose = () => {
@@ -47,84 +51,100 @@ function CreateEmployeeForm() {
       "Job Position field should contain maximum 30 symobols"
     ),
   });
-  const formik = useFormik<Employee>({
+  const formik = useFormik<EmployeeFormValue>({
     initialValues: {
       name: "",
       surName: "",
-      age: "",
+      age: 0,
       jobPosition: "",
+      termsOfUse: false,
     },
     validationSchema: validationSchema,
     validateOnChange: true,
 
     onSubmit: (values, helpers) => {
-      employeeDataContext.setEmployees((prevValue: Employee[]) => {
-        return [...prevValue, values];
+      employeeDataContext.setEmployees((prevValue: EmployeeCardData[]) => {
+        return [
+          ...prevValue,
+          {
+            name: values.name,
+            surName: values.surName,
+            age: values.age,
+            jobPosition: values.jobPosition,
+            id: Date.now(),
+            slug: String(Date.now()),
+          },
+        ];
       });
+
       helpers.resetForm();
       console.log(values);
       setModalOpen(true);
     },
   });
-
-
   return (
-    <UserDataFormContainer onSubmit={formik.handleSubmit}>
-      <InputContainer>
+    <EmployeeFormContainer onSubmit={formik.handleSubmit}>
+      <InputsContainer>
         <Input
-          id="name-id"
-          name="name"
-          type="text"
+          name={EMPLOYEE_FORM_NAMES.FIRST_NAME}
+          id="first_name"
           placeholder="John"
           label="Name*"
-          value={formik.values.name}
+          value={formik.values[EMPLOYEE_FORM_NAMES.FIRST_NAME]}
           onChange={formik.handleChange}
-          error={formik.errors.name}
+          error={formik.errors[EMPLOYEE_FORM_NAMES.FIRST_NAME]}
         />
         <Input
-          id="surname-id"
-          name="surName"
-          type="text"
+          name={EMPLOYEE_FORM_NAMES.LAST_NAME}
+          id="last_name"
           placeholder="Johnson"
           label="Surname*"
-          value={formik.values.surName}
+          value={formik.values[EMPLOYEE_FORM_NAMES.LAST_NAME]}
           onChange={formik.handleChange}
-          error={formik.errors.surName}
+          error={formik.errors[EMPLOYEE_FORM_NAMES.LAST_NAME]}
         />
         <Input
-          id="age-id"
-          name="age"
-          type="number"
+          name={EMPLOYEE_FORM_NAMES.AGE}
+          id="age"
           placeholder="25"
-          label="Age*"
-          value={formik.values.age}
+          type="number"
+          min={18}
+          max={80}
+          step={1}
+          label="Age"
+          value={formik.values[EMPLOYEE_FORM_NAMES.AGE]}
           onChange={formik.handleChange}
-          error={formik.errors.age}
+          error={formik.errors[EMPLOYEE_FORM_NAMES.AGE]}
         />
         <Input
-          id="job-id"
-          name="jobPosition"
-          type="text"
+          name={EMPLOYEE_FORM_NAMES.POSITION}
+          id="position"
           placeholder="QA"
-          label="Job Position"
-          value={formik.values.jobPosition}
+          label="Job position*"
+          value={formik.values[EMPLOYEE_FORM_NAMES.POSITION]}
           onChange={formik.handleChange}
-          error={formik.errors.jobPosition}
+          error={formik.errors[EMPLOYEE_FORM_NAMES.POSITION]}
         />
-      </InputContainer>
-      <ButtonContainer>
-        <Button
-          disabled={!formik.dirty || formik.isSubmitting}
-          name="Create"
-          type="submit"
+        <Checkbox
+          id="agree_id"
+          name={EMPLOYEE_FORM_NAMES.TERMS_OF_USE}
+          onChange={formik.handleChange}
+          checked={formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
+          label="I agree with the terms of use*"
+          type="checkbox"
         />
-      </ButtonContainer>
+      </InputsContainer>
+      <Button
+        name="Create"
+        type="submit"
+        disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
+      />
 
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
         <Alert severity="success">Employee card is created</Alert>
-        <ModalButton onClick={onModalClose}>Show Card</ModalButton>
+        <ModalButton onClick={onModalClose}>Show Card</ModalButton>{" "}
       </Modal>
-    </UserDataFormContainer>
+    </EmployeeFormContainer>
   );
 }
 

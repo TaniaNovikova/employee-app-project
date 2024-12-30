@@ -1,37 +1,29 @@
-import { InputProps } from "./types";
-import {
-  InputWrapper,
-  InputLabel,
-  InputElemnt,
-  ErrorContainer,
-} from "./styles";
+import "./styles.ts";
+import { ErrorMessage, InputContainer, InputElement, Label } from './styles';
+import { InputProps } from "employeeProjectTypes.js";
 
-function Input({
-  label,
-  name,
-  type,
-  placeholder,
-  id,
-  disabled,
-  error,
-  value = undefined,
-  onChange,
-}: InputProps) {
+function Input({ name, id, type = 'text', placeholder, label, value, onChange, error, min, max, step }: InputProps) {
+  // console.log("Input render or re-render");
+
   return (
-    <InputWrapper>
-      <InputLabel htmlFor={id}>{label}</InputLabel>
-      <InputElemnt
-        $error={error}
+    <InputContainer>
+      {/* Пример оператора условного рендеринга */}
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <InputElement
         id={id}
-        type={type}
-        placeholder={placeholder}
         name={name}
-        disabled={disabled}
+        type={type}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
+        className="input-element"
+        min={min}
+        max={max}
+        step={step}
       />
-      {!!error && <ErrorContainer>{error}</ErrorContainer>}
-    </InputWrapper>
+      <ErrorMessage>{error}</ErrorMessage>
+      {/* {error && <ErrorMessage>{error}</ErrorMessage>} */}
+    </InputContainer>
   );
 }
 

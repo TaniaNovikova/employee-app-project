@@ -27,15 +27,17 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.div`
-  height: 100%;
-  width: 80px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
   cursor: pointer;
 `;
 
 export const LogoImg = styled.img`
   width: 100%;
   height: 100%;
-`;
+  border-radius: 50%;
+`
 
 export const NavigationContainer = styled.nav`
   display: flex;

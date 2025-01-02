@@ -3,8 +3,14 @@ import styled from "@emotion/styled";
 export const EmployeesWrapper = styled.div`
   display: flex;
   flex: 1;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
   justify-content: center;
-  gap: 15px;
+  align-items:center;
+  gap: 10px;
+  width: 900px;
+  overflow-x: auto;
+`;
+
+export const ButtonControl = styled.div`
+  width: 40px;
 `;

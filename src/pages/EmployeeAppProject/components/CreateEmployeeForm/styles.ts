@@ -21,8 +21,8 @@ export const InputsContainer = styled.div`
 `;
 
 export const ModalButton = styled.button`
-  background-color: #dfede8;
-  color: #1e3c3a;
+  background-color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_BG};
+  color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_COLOR};
   height: 50px;
   width: 100%;
   font-size: 22px;

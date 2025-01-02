@@ -1,7 +1,22 @@
 import { EmployeeCardData } from "employeeProjectTypes";
-import { TextDiv, TextLabel, TextContent, EmployeesCardWrapper } from "./styles";
+import {
+  TextDiv,
+  TextLabel,
+  TextContent,
+  EmployeesCardWrapper,
+} from "./styles";
 
-function EmployeesCard({ name, surName, age, jobPosition, id, slug }: EmployeeCardData) {
+function EmployeesCard({
+  name,
+  surName,
+  age,
+  jobPosition,
+  id,
+  slug,
+}: EmployeeCardData) {
+
+ 
+  
   return (
     <EmployeesCardWrapper>
       <TextDiv>
@@ -12,16 +27,19 @@ function EmployeesCard({ name, surName, age, jobPosition, id, slug }: EmployeeCa
         <TextLabel>Surname</TextLabel>
         <TextContent>{surName}</TextContent>
       </TextDiv>
-      <TextDiv>
-        <TextLabel>Age</TextLabel>
-        <TextContent>{age}</TextContent>
-      </TextDiv>
+      {age && (
+        <TextDiv>
+          <TextLabel>Age</TextLabel>
+          <TextContent>{age}</TextContent>
+        </TextDiv>
+      )}
       <TextDiv>
         <TextLabel>Job Position</TextLabel>
         <TextContent>{jobPosition}</TextContent>
       </TextDiv>
+     
     </EmployeesCardWrapper>
-  );
+  )
 }
 
 export default EmployeesCard;

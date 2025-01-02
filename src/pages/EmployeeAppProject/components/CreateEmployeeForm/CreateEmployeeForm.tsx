@@ -36,16 +36,13 @@ function CreateEmployeeForm() {
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .required("Name field is required")
-      .min(2, "Name field should contain minimum 2 symbols")
+      // .required("Name field is required")
+      // .min(2, "Name field should contain minimum 2 symbols")
       .max(50, "Name field should contain maximum 50 symobols"),
     surName: Yup.string()
-      .required("Surame field is required")
+      // .required("Surame field is required")
       .max(15, "Surname field should contain maximum 15 symobols"),
-    age: Yup.number()
-      .required("Age field is required")
-      .min(1, "Age field should contain minimum 1 symobol")
-      .max(999, "Age field should contain maximum 3 symobols"),
+
     jobPosition: Yup.string().max(
       30,
       "Job Position field should contain maximum 30 symobols"
@@ -55,7 +52,7 @@ function CreateEmployeeForm() {
     initialValues: {
       name: "",
       surName: "",
-      age: 0,
+      age: 18,
       jobPosition: "",
       termsOfUse: false,
     },
@@ -77,9 +74,9 @@ function CreateEmployeeForm() {
         ];
       });
 
-      helpers.resetForm();
-      console.log(values);
+      console.table(values);
       setModalOpen(true);
+      helpers.resetForm();//чтобы не было возможности создать одну и ту же карточку 2 раза
     },
   });
   return (

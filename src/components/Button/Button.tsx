@@ -1,6 +1,6 @@
 import { ButtonProps } from "./types";
 import { SyledButton, ButtonImage } from "./styles";
-import { colors } from "styles/colors";
+import { colors } from "enums";
 
 function Button({
   name,

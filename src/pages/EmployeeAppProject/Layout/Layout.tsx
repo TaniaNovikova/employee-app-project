@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import EmployeeAppContextProvider from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
+import logoTN from "assets/LogoTN.png"
 
 import {
   LayoutWrapper,
@@ -26,7 +27,7 @@ function Layout({ children }: LayoutProps) {
         <Header>
           <Logo onClick={goToHomePage}>
             <LogoImg
-              src="https://static.vecteezy.com/system/resources/thumbnails/012/986/755/small/abstract-circle-logo-icon-free-png.png"
+              src={logoTN}
               alt="logo picture"
             />
           </Logo>

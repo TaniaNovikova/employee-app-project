@@ -62,7 +62,6 @@ function CreateEmployeeForm() {
     onSubmit: (values, helpers) => {
       employeeDataContext.setEmployees((prevValue: EmployeeCardData[]) => {
         return [
-          ...prevValue,
           {
             name: values.name,
             surName: values.surName,
@@ -71,12 +70,13 @@ function CreateEmployeeForm() {
             id: Date.now(),
             slug: String(Date.now()),
           },
+          ...prevValue,
         ];
       });
 
       console.table(values);
       setModalOpen(true);
-      helpers.resetForm();//чтобы не было возможности создать одну и ту же карточку 2 раза
+      helpers.resetForm(); //чтобы не было возможности создать одну и ту же карточку 2 раза
     },
   });
   return (

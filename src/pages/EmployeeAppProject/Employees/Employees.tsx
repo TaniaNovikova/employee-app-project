@@ -10,24 +10,16 @@ import DeleteAllButton from "components/DeleteAllButton/DeleteAllButton";
 
 function Employees() {
   const { employees, setEmployees } = useContext(EmployeeAppContext);
-  // const [newEmployees, setNewEmployees] = useState(employees);
+  const [index, setIndex] = useState(0);
 
-
-  // const onAllCardsDelete = () => {
-  //   setNewEmployees([]);
-  // };
-  // let lastIndex = newEmployees.length - 1;
-  // const [index, setIndex] = useState(lastIndex);
-
-  // const onPrevClick = () => {
-  //   setIndex((i) => (i <= 0 ? lastIndex : i - 1));
-  // };
-
-  // const onNextClick = () => {
-  //   setIndex((i) => (i >= lastIndex ? 0 : i + 1));
-  // };
-  const employeesCardsMap = (newEmployees: EmployeeCardData[]): ReactNode[] =>
-    newEmployees.map((emlpoyeeObj: EmployeeCardData) => {
+  const onNextClick = () => {
+    setIndex((i) => (i >= employees.length - 1 ? 0 : i + 1));
+  };
+  const onPrevClick = () => {
+    setIndex((i) => (i <= 0 ? employees.length - 1 : i + 1));
+  };
+  const employeesCardsMap = (employees: EmployeeCardData[]): ReactNode[] =>
+    employees.map((emlpoyeeObj: EmployeeCardData) => {
       return (
         <>
           <div key={v4()}>
@@ -49,53 +41,55 @@ function Employees() {
         </>
       );
     });
-  
+
   const onDeleteCard = (id: number) => {
     return setEmployees(employees.filter((cardObj) => cardObj.id !== id));
   };
-  // const onDeleteCard = (id: number) => {
-  //   return setNewEmployees(newEmployees.filter((cardObj) => cardObj.id !== id));
-  // };
 
-  // const onDeleteCardByIndex = (index: number) => {
-  //   if (index === lastIndex) {
-  //     const filteredEmployees = newEmployees.filter(
-  //       (newEmployeesObj) => newEmployees.indexOf(newEmployeesObj) !== index
-  //     );
-  //     return setNewEmployees(filteredEmployees);
-  //   } else {
-  //     return setNewEmployees(
-  //       newEmployees.filter(
-  //         (newEmployeesObj) => newEmployees.indexOf(newEmployeesObj) !== index
-  //       )
-  //     );
-  //   }
-  // };
+  const onDeleteCardByIndex = (index: number) => {
+    if (index === employees.length - 1) {
+      setIndex(0);
+
+      return setEmployees(
+        employees.filter(
+          (employeesObj) =>
+            employees.indexOf(employeesObj) !== employees.length - 1
+        )
+      );
+    } else if (index === 0) {
+      setIndex(employees.length - 1);
+      return setEmployees(
+        employees.filter(
+          (employeesObj) => employees.indexOf(employeesObj) !== 0
+        )
+      );
+    }
+  };
   return (
     <>
-      {/* <ButtonControl>
+      <ButtonControl>
         <Button name="<" onClick={onPrevClick} />
       </ButtonControl>
       <div key={v4()}>
         <EmployeesCard
-          name={newEmployees[index].name}
-          surName={newEmployees[index].surName}
-          age={newEmployees[index].age}
-          jobPosition={newEmployees[index].jobPosition}
-          id={newEmployees[index].id}
-          slug={newEmployees[index].slug}
+          name={employees[index].name}
+          surName={employees[index].surName}
+          age={employees[index].age}
+          jobPosition={employees[index].jobPosition}
+          id={employees[index].id}
+          slug={employees[index].slug}
         />
         <Button
           name="Delete card"
           onClick={() => {
-            onDeleteCardByIndex(newEmployees.indexOf(newEmployees[index]));
+            onDeleteCardByIndex(employees.indexOf(employees[index]));
           }}
         />
       </div>
       <ButtonControl>
         <Button name=">" onClick={onNextClick} />
-      </ButtonControl> */}
-      <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
+      </ButtonControl>
+      {/* <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper> */}
       {!!employees.length && ( //!! для того, чтобы ноль не прорисовывался на странице
         <DeleteAllButton
           name="Delete all cards"

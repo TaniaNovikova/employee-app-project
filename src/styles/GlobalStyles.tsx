@@ -3,6 +3,7 @@ import { Global, css } from "@emotion/react";
 export const GlobalAppStyles = css`
   * {
     box-sizing: border-box;
+    
   }
 
   html,
@@ -22,14 +23,17 @@ export const GlobalAppStyles = css`
   h5,
   h6,
   p,
-  li {
+  li,
+  a {
     margin: 0;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
   }
 
   #root {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    font-family: Lato, Arial, Helvetica, sans-serif;
   }
 `;
 

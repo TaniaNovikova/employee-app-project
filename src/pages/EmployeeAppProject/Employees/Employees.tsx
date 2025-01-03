@@ -46,13 +46,15 @@ function Employees() {
   const onDeleteCardByIndex = (index: number, id: number) => {
     if (employees.length === 1) {
       return setEmployees([]);
+    } else if (employees.length === 2) {
+      setIndex(0);
+      return setEmployees(employees.filter((cardObj) => cardObj.id !== id));
     } else {
       if (index === employees.length - 1) {
         setIndex(index - 1);
-
         return setEmployees(employees.filter((cardObj) => cardObj.id !== id));
       } else if (index === 0) {
-        setIndex(index + 1);
+        setIndex(1);
         return setEmployees(employees.filter((cardObj) => cardObj.id !== id));
       }
       return setEmployees(employees.filter((cardObj) => cardObj.id !== id));

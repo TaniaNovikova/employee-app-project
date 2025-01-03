@@ -3,12 +3,12 @@ import * as Yup from "yup";
 import { useContext, useState } from "react";
 import { Alert } from "@mui/material";
 
-import Button from "components/Button/Button";
+import ButtonEP from "components/ButtonEP/ButtonEP";
 import Input from "components/Input/Input";
 import Checkbox from "components/Checkbox/Checkbox";
 import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
 
-import { ModalButton, EmployeeFormContainer, InputsContainer } from "./styles";
+import { ButtonEPWrapper, EmployeeFormContainer, InputsContainer, ModalButton } from "./styles";
 import { PagesPaths } from "pages/EmployeeAppProject/Layout/types";
 import Modal from "components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
@@ -131,21 +131,16 @@ function CreateEmployeeForm() {
           type="checkbox"
         />
       </InputsContainer>
-      <Button
-        name="Create"
-        type="submit"
-        disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
-      />
-
+      <ButtonEPWrapper>
+        <ButtonEP
+          name="Create"
+          type="submit"
+          disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
+        />
+      </ButtonEPWrapper>
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
         <Alert severity="success">Employee card is created</Alert>
-        {/* <ModalButton onClick={onModalClose}>Show Card</ModalButton>{" "} */}
-        <Button
-          name="Show Card"
-          onClick={onModalClose}
-          backgroundColor={EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_BG}
-          fontColor={EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_TEXT}
-        />
+        <ModalButton onClick={onModalClose}>Show Card</ModalButton>
       </Modal>
     </EmployeeFormContainer>
   );

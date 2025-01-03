@@ -4,13 +4,37 @@ import { EmployeeAppContext } from "../contexts/EmployeeAppContext";
 import { v4 } from "uuid";
 import EmployeesCard from "pages/EmployeeAppProject/components/EmployeesСard/EmployeesCard";
 import { EmployeeCardData } from "employeeProjectTypes";
-import { ButtonControl, Carousel, DeleteCardButtonControl, EmployeesPageWrapper, EmployeesWrapper, WrapperForCarouselAndMap } from "./styles";
-import Button from "components/Button/Button";
-import DeleteAllButton from "components/DeleteAllButton/DeleteAllButton";
+import {
+  ButtonControl,
+  Carousel,
+  DeleteCardButtonControl,
+  EmployeesPageWrapper,
+  EmployeesWrapper,
+  ModalButtonWrapper,
+  WrapperForCarouselAndMap,
+} from "./styles";
+import ButtonEP from "components/ButtonEP/ButtonEP";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 
 function Employees() {
   const { employees, setEmployees } = useContext(EmployeeAppContext);
   const [index, setIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleDelete = () => {
+    setEmployees([]);
+    setOpen(false);
+  };
 
   const onNextClick = () => {
     setIndex((i) => (i >= employees.length - 1 ? 0 : i + 1));
@@ -47,12 +71,15 @@ function Employees() {
               id={emlpoyeeObj.id}
               slug={emlpoyeeObj.slug}
             />
-            <Button
-              name="Delete card"
-              onClick={() => {
-                onDeleteCard(emlpoyeeObj.id);
-              }}
-            />
+            <DeleteCardButtonControl>
+              <ButtonEP
+                name="Delete card"
+                isRed
+                onClick={() => {
+                  onDeleteCard(emlpoyeeObj.id);
+                }}
+              />
+            </DeleteCardButtonControl>
           </div>
         </>
       );
@@ -63,46 +90,74 @@ function Employees() {
   };
   return (
     <EmployeesPageWrapper>
-    <WrapperForCarouselAndMap>
-      {!!employees.length && 
-        <Carousel>
-          <ButtonControl>
-            <Button name="<" onClick={onPrevClick} />
-          </ButtonControl>
-          <div key={v4()}>
-            <EmployeesCard
-              name={employees[index].name}
-              surName={employees[index].surName}
-              age={employees[index].age}
-              jobPosition={employees[index].jobPosition}
-              id={employees[index].id}
-              slug={employees[index].slug}
-            />
-            <DeleteCardButtonControl>
-            <Button
-              name="Delete card"
-              onClick={() => {
-                onDeleteCardByIndex(
-                  employees.indexOf(employees[index]),
-                  employees[index].id
-                );
-              }}
-            />
-            </DeleteCardButtonControl>
-          </div>
-          <ButtonControl>
-            <Button name=">" onClick={onNextClick} />
-          </ButtonControl>
-        </Carousel>
-      }
-      <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
+      <WrapperForCarouselAndMap>
+        {!!employees.length && (
+          <Carousel>
+            <ButtonControl>
+              <ButtonEP name="<" onClick={onPrevClick} />
+            </ButtonControl>
+            <div key={v4()}>
+              <EmployeesCard
+                name={employees[index].name}
+                surName={employees[index].surName}
+                age={employees[index].age}
+                jobPosition={employees[index].jobPosition}
+                id={employees[index].id}
+                slug={employees[index].slug}
+              />
+              <DeleteCardButtonControl>
+                <ButtonEP
+                  name="Delete card"
+                  isRed
+                  onClick={() => {
+                    onDeleteCardByIndex(
+                      employees.indexOf(employees[index]),
+                      employees[index].id
+                    );
+                  }}
+                />
+              </DeleteCardButtonControl>
+            </div>
+            <ButtonControl>
+              <ButtonEP name=">" onClick={onNextClick} />
+            </ButtonControl>
+          </Carousel>
+        )}
+        <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
       </WrapperForCarouselAndMap>
-      {!!employees.length && ( //!! для того, чтобы ноль не прорисовывался на странице
-        <DeleteAllButton
-          name="Delete all cards"
-          onClick={() => setEmployees([])}
-        />
-      )}
+
+      <div>
+        {!!employees.length && (
+          <ModalButtonWrapper>
+            <Button variant="outlined" color="error" onClick={handleOpen}>
+              Delete all cards
+            </Button>
+          </ModalButtonWrapper>
+        )}
+
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="delete-dialog-title"
+          aria-describedby="delete-dialog-description"
+        >
+          <DialogTitle id="delete-dialog-title">Delete All Cards?</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="delete-dialog-description">
+              Are you sure you want to delete all cards? This action cannot be
+              undone.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={handleDelete} color="error" variant="contained">
+              Delete
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
     </EmployeesPageWrapper>
   );
 }

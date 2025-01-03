@@ -52,7 +52,7 @@ function CreateEmployeeForm() {
     initialValues: {
       name: "",
       surName: "",
-      age: 18,
+      age: "",
       jobPosition: "",
       termsOfUse: false,
     },
@@ -65,7 +65,7 @@ function CreateEmployeeForm() {
           {
             name: values.name,
             surName: values.surName,
-            age: values.age,
+            age: values.age ? values.age : undefined, // Убираем поле, если оно пустое
             jobPosition: values.jobPosition,
             id: Date.now(),
             slug: String(Date.now()),

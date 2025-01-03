@@ -20,7 +20,7 @@ export interface EmployeeProjectContextType {
 export interface Employee {
   name: string;
   surName: string;
-  age?: number |undefined;
+  age?: number |string;
   jobPosition: string;
 }
 
@@ -30,7 +30,7 @@ export interface EmployeeFormValue extends Employee {
 export interface EmployeeCardData{
   name: string;
   surName: string;
-  age?: number |undefined;
+  age?: number | string;
   jobPosition: string;
   id: number;
   slug: string;

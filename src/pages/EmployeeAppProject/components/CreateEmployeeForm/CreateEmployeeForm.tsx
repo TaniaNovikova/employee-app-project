@@ -21,7 +21,7 @@ function CreateEmployeeForm() {
   const [employeeCardData, setEmployeeCardData] = useState<EmployeeCardData>({
     name: "",
     surName: "",
-    age: 0,
+    age: "",
     jobPosition: "",
     id: 0,
     slug: "0",
@@ -34,30 +34,59 @@ function CreateEmployeeForm() {
     navigate(PagesPaths.EMPLOYEES);
   };
 
-  const validationSchema = Yup.object().shape({
-    name: Yup.string()
-      // .required("Name field is required")
-      // .min(2, "Name field should contain minimum 2 symbols")
-      .max(50, "Name field should contain maximum 50 symobols"),
-    surName: Yup.string()
-      // .required("Surame field is required")
-      .max(15, "Surname field should contain maximum 15 symobols"),
+  const shema = Yup.object().shape({
+    [EMPLOYEE_FORM_NAMES.FIRST_NAME]: Yup.string()
+      .required('The "Name" field is required.')
+      .test(
+        "Check value length",
+        "The field must contain no more than 50 letters.",
+        (value) => value.length <= 25
+      )
+      .test(
+        "Check value lenght",
+        "The field must contain at least 2 letters",
+        (value) => value.length >= 2
+      ),
+    [EMPLOYEE_FORM_NAMES.LAST_NAME]: Yup.string()
+      .required('The field "Surname" is mandatory')
+      .test(
+        "Check value length",
+        "The field must contain no more than 15 letters.",
+        (value) => value.length <= 15
+      ),
+    [EMPLOYEE_FORM_NAMES.AGE]: Yup.number()
+      .typeError("Age must be a number not less than 18 and not more than 80")
+      .min(18, "Minimum age: 18 years or older")
+      .max(80, "Maximum age: not older than 80 years"),
+    //проверки max и min работают с числовыми значениями и
+    //они указывает на минимальное и минимальное значение в поле(!не количество сиволов)
+    // .max(150, 'Max 150')
+    // .min(18, 'Min 18'),
 
-    jobPosition: Yup.string().max(
-      30,
-      "Job Position field should contain maximum 30 symobols"
-    ),
+    [EMPLOYEE_FORM_NAMES.POSITION]: Yup.string()
+
+      .required('The field "Job Position" is mandatory.')
+      .test(
+        "Check value length",
+        "The field must contain no more than 30 letters.",
+        (value) => value.length <= 30
+      ),
   });
-  const formik = useFormik<EmployeeFormValue>({
+
+  //Настройка формы. Сохраняем возвращаемое useFormik значение (объект) в переменную formik
+  const formik = useFormik({
     initialValues: {
-      name: "",
-      surName: "",
-      age: 18,
-      jobPosition: "",
-      termsOfUse: false,
-    },
-    validationSchema: validationSchema,
-    validateOnChange: true,
+      [EMPLOYEE_FORM_NAMES.FIRST_NAME]: "",
+      [EMPLOYEE_FORM_NAMES.LAST_NAME]: "",
+      [EMPLOYEE_FORM_NAMES.AGE]: "",
+      [EMPLOYEE_FORM_NAMES.POSITION]: "",
+      [EMPLOYEE_FORM_NAMES.TERMS_OF_USE]: false,
+    } as unknown as EmployeeFormValue,
+    //привязка валидационной схемы Yup к формику формы LoginForm
+    validationSchema: shema,
+    validateOnChange: false,
+    // validateOnMount: true,
+
 
     onSubmit: (values, helpers) => {
       employeeDataContext.setEmployees((prevValue: EmployeeCardData[]) => {
@@ -74,7 +103,7 @@ function CreateEmployeeForm() {
         ];
       });
 
-      console.table(values);
+      // console.table(values);
       setModalOpen(true);
       helpers.resetForm(); //чтобы не было возможности создать одну и ту же карточку 2 раза
     },

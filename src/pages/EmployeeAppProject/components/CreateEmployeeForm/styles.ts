@@ -19,6 +19,10 @@ export const InputsContainer = styled.div`
   gap: 20px;
   width: 100%;
 `;
+export const ButtonEPWrapper = styled.div`
+  height: 70px;
+  width: 100%;
+`;
 
 export const ModalButton = styled.button`
   background-color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_BG};

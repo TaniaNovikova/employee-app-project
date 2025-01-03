@@ -2,7 +2,7 @@ import { ButtonProps } from "employeeProjectTypes";
 import { StyledButton, ButtonImage } from "./styles";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
-function Button({
+function ButtonEP({
   name,
   type = "button",
   onClick,
@@ -27,4 +27,4 @@ function Button({
   );
 }
 
-export default Button;
+export default ButtonEP;

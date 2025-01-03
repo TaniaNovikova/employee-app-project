@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "enums";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 interface StyledButtonProps {
   $backgroundColor: string;
@@ -11,10 +11,10 @@ const getButtonColor = (
   $isRed: boolean | undefined,
   $backgroundColor: string
 ) => {
-  return $isRed ? colors.ERROR : $backgroundColor;
+  return $isRed ? EMPLOYEE_PROJECT_COLORS.RED : $backgroundColor;
 };
 
-export const SyledButton = styled("button")<StyledButtonProps>`
+export const StyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
   height: 100%;
   outline: none;
@@ -28,7 +28,7 @@ export const SyledButton = styled("button")<StyledButtonProps>`
   cursor: pointer;
   &:disabled {
     cursor: not-allowed;
-    background-color: gray;
+    background-color: ${EMPLOYEE_PROJECT_COLORS.LABELS_GRAY};
   }
 `;
 

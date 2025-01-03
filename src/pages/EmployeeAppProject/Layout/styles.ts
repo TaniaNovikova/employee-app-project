@@ -1,18 +1,14 @@
 import styled from "@emotion/styled";
-import { Collapse } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
-export enum COLORS {
-  BACKGROUND_BLUE = "#112233",
-  HEADER_WHITE = "#FAF9FF",
-  CARD_WHITE = "#FFFFFF",
-}
+
 
 export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: ${COLORS.BACKGROUND_BLUE};
+  background-color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -21,9 +17,9 @@ export const Header = styled.header`
   justify-content: space-between;
   width: 100%;
   height: 100px;
-  background-color: ${COLORS.HEADER_WHITE};
+  background-color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
   padding: 20px 84px;
-  color: black;
+  color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
 `;
 
 export const Logo = styled.div`
@@ -47,7 +43,7 @@ export const NavigationContainer = styled.nav`
 `;
 
 export const Link = styled(NavLink)`
-  color: black;
+  color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
   font-size: 20px;
   font-weight: normal;
   text-decoration: none;
@@ -59,5 +55,5 @@ export const Main = styled.main`
   align-items: center;
   flex: 1;
   padding: 40px;
-  color: ${COLORS.HEADER_WHITE};
+  color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
 `;

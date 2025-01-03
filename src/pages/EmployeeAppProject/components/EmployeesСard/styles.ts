@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { COLORS } from "pages/EmployeeAppProject/Layout/styles";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 export const EmployeesCardWrapper = styled.div`
 display: flex;
@@ -9,7 +9,7 @@ display: flex;
   max-height: fit-content;
   padding: 60px;
   gap: 30px;
-  background-color: ${COLORS.CARD_WHITE};
+  background-color: ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE};
   border: 1px solid #000000;
   border-radius: 4px;
 `;
@@ -25,11 +25,11 @@ export const TextDiv = styled.div`
 export const TextLabel = styled.p`
   font-size: 16px;
   font-weight: lighter;
-  color: rgba(111, 111, 111, 1);
+  color: ${EMPLOYEE_PROJECT_COLORS.LABELS_GRAY};
 `;
 
 export const TextContent = styled.p`
   font-size: 28px;
   font-weight: bold;
-  color: rgba(28, 28, 28, 1);
+  color: ${EMPLOYEE_PROJECT_COLORS.PLACEHOLDER_GRAY};
 `;

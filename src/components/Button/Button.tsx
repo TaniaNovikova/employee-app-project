@@ -1,6 +1,6 @@
-import { ButtonProps } from "./types";
-import { SyledButton, ButtonImage } from "./styles";
-import { colors } from "enums";
+import { ButtonProps } from "employeeProjectTypes";
+import { StyledButton, ButtonImage } from "./styles";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 function Button({
   name,
@@ -9,11 +9,11 @@ function Button({
   imgSrc,
   disabled = false,
   isRed = false,
-  backgroundColor = colors.PRIMARY_BLUE,
-  fontColor = colors.IVORY,
+  backgroundColor = EMPLOYEE_PROJECT_COLORS.BUTTON_BLUE,
+  fontColor = EMPLOYEE_PROJECT_COLORS.HEADER_WHITE,
 }: ButtonProps) {
   return (
-    <SyledButton
+    <StyledButton
       $isRed={isRed}
       type={type}
       onClick={onClick}
@@ -23,7 +23,7 @@ function Button({
     >
       {!!imgSrc && <ButtonImage src={imgSrc} alt="icon" />}
       {!!name && name}
-    </SyledButton>
+    </StyledButton>
   );
 }
 

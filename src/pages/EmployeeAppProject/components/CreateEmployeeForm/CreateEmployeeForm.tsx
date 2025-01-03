@@ -12,7 +12,7 @@ import { ModalButton, EmployeeFormContainer, InputsContainer } from "./styles";
 import { PagesPaths } from "pages/EmployeeAppProject/Layout/types";
 import Modal from "components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
-import { EMPLOYEE_FORM_NAMES } from "enums";
+import { EMPLOYEE_FORM_NAMES, EMPLOYEE_PROJECT_COLORS } from "enums";
 import { EmployeeCardData, EmployeeFormValue } from "employeeProjectTypes";
 
 function CreateEmployeeForm() {
@@ -139,7 +139,13 @@ function CreateEmployeeForm() {
 
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
         <Alert severity="success">Employee card is created</Alert>
-        <ModalButton onClick={onModalClose}>Show Card</ModalButton>{" "}
+        {/* <ModalButton onClick={onModalClose}>Show Card</ModalButton>{" "} */}
+        <Button
+          name="Show Card"
+          onClick={onModalClose}
+          backgroundColor={EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_BG}
+          fontColor={EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_TEXT}
+        />
       </Modal>
     </EmployeeFormContainer>
   );

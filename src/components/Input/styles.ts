@@ -30,6 +30,6 @@ export const InputElement = styled.input`
 
 export const ErrorMessage = styled.div`
   height: 18px;
-  color: red;
+  color: ${EMPLOYEE_PROJECT_COLORS.RED};
   font-size: 16px;
 `;

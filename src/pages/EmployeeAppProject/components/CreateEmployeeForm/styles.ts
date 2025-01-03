@@ -22,7 +22,7 @@ export const InputsContainer = styled.div`
 
 export const ModalButton = styled.button`
   background-color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_BG};
-  color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_COLOR};
+  color: ${EMPLOYEE_PROJECT_COLORS.MODAL_BUTTON_TEXT};
   height: 50px;
   width: 100%;
   font-size: 22px;

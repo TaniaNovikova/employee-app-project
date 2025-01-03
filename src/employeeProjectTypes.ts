@@ -38,12 +38,15 @@ export interface EmployeeCardData{
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 export type ButtonType = "button" | "submit" | "reset";
-
 export interface ButtonProps {
-  name: string;
+  name: string | undefined;
   type?: ButtonType;
-  onClick?: () => void;
+  imgSrc?: string | undefined;
+  onClick?: (event: MouseEvent) => void;
   disabled?: boolean;
+  isRed?: boolean;
+  backgroundColor?: string;
+  fontColor?: string;
 }
 
 export interface CheckboxProps {
@@ -69,3 +72,7 @@ export interface InputProps {
   step?: number;
   error?: string;
 }
+import { MouseEvent } from "react";
+
+
+

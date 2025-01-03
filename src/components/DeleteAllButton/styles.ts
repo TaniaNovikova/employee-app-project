@@ -1,17 +1,17 @@
 import styled from "@emotion/styled";
-import { colors } from "enums";
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 
 
 
 export const StyledButton = styled.button`
-  width: 50px;
-  height: 450px;
+  width: 70px;
+  height: 100%;
   outline: none;
-  background-color: rgb(100 81 53);
-  border-radius: 3px;
-  color: bisque;
-  font-size: 16px;
+  background-color: ${EMPLOYEE_PROJECT_COLORS.RED};
+  border-radius: 4px;
+  color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
   writing-mode: vertical-rl;
@@ -19,11 +19,8 @@ export const StyledButton = styled.button`
   text-align: center;
   padding: 15px;
   align-self: center;
-  margin-left: 15px;
-  margin-bottom: 40px;
-  &hover {
-    background-color: rgb(160, 129, 49);
-    border: outset;
+  &:hover {
+    background-color: ${EMPLOYEE_PROJECT_COLORS.RED_HOVER};
   }
 `;
 

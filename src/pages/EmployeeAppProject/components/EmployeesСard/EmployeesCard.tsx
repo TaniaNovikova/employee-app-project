@@ -14,9 +14,6 @@ function EmployeesCard({
   id,
   slug,
 }: EmployeeCardData) {
-
- 
-  
   return (
     <EmployeesCardWrapper>
       <TextDiv>
@@ -37,9 +34,8 @@ function EmployeesCard({
         <TextLabel>Job Position</TextLabel>
         <TextContent>{jobPosition}</TextContent>
       </TextDiv>
-     
     </EmployeesCardWrapper>
-  )
+  );
 }
 
 export default EmployeesCard;

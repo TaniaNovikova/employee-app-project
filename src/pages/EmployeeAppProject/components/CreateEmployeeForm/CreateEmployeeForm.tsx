@@ -160,13 +160,11 @@ function CreateEmployeeForm() {
           type="checkbox"
         />
       </InputsContainer>
-      <ButtonEPWrapper>
         <ButtonEP
           name="Create"
           type="submit"
           disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
         />
-      </ButtonEPWrapper>
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
         <Alert severity="success">Employee card is created</Alert>
         <ModalButton onClick={onModalClose}>Show Card</ModalButton>

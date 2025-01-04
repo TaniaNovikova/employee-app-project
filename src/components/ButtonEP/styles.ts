@@ -16,10 +16,10 @@ const getButtonColor = (
 
 export const StyledButton = styled("button")<StyledButtonProps>`
   width: 100%;
-  height: 100%;
+  height: 70px;
   outline: none;
+  border: 1px solid transparent;
   border-radius: 4px;
-  border: 1px solid grey;
   font-size: 20px;
   font-weight: 600;
   color: ${({ $fontColor }) => $fontColor};

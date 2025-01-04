@@ -6,7 +6,9 @@ import EmployeesCard from "pages/EmployeeAppProject/components/EmployeesСard/Em
 import { EmployeeCardData } from "employeeProjectTypes";
 import {
   ButtonControl,
+  CardWithButtonWrapper,
   Carousel,
+  DeleteAllButtonControl,
   DeleteCardButtonControl,
   EmployeesPageWrapper,
   EmployeesWrapper,
@@ -64,7 +66,7 @@ function Employees() {
     employees.map((emlpoyeeObj: EmployeeCardData) => {
       return (
         <>
-          <div key={v4()}>
+          <CardWithButtonWrapper key={v4()}>
             <EmployeesCard
               name={emlpoyeeObj.name}
               surName={emlpoyeeObj.surName}
@@ -75,14 +77,14 @@ function Employees() {
             />
             <DeleteCardButtonControl>
               <ButtonEP
-                name="Delete card"
+                name="Delete"
                 isRed
                 onClick={() => {
                   onDeleteCard(emlpoyeeObj.id);
                 }}
               />
             </DeleteCardButtonControl>
-          </div>
+          </CardWithButtonWrapper>
         </>
       );
     });
@@ -90,15 +92,17 @@ function Employees() {
   const onDeleteCard = (id: number) => {
     return setEmployees(employees.filter((cardObj) => cardObj.id !== id));
   };
+
   return (
     <EmployeesPageWrapper>
-      <WrapperForCarouselAndMap>
+      {/* <WrapperForCarouselAndMap> */}
         {!!employees.length && (
           <Carousel>
             <ButtonControl>
               <ButtonEP name="<" onClick={onPrevClick} />
             </ButtonControl>
-            <div key={v4()}>
+
+            <CardWithButtonWrapper key={v4()}>
               <EmployeesCard
                 name={employees[index].name}
                 surName={employees[index].surName}
@@ -109,7 +113,7 @@ function Employees() {
               />
               <DeleteCardButtonControl>
                 <ButtonEP
-                  name="Delete card"
+                  name="Delete"
                   isRed
                   onClick={() => {
                     onDeleteCardByIndex(
@@ -119,47 +123,58 @@ function Employees() {
                   }}
                 />
               </DeleteCardButtonControl>
-            </div>
+            </CardWithButtonWrapper>
+
             <ButtonControl>
               <ButtonEP name=">" onClick={onNextClick} />
             </ButtonControl>
           </Carousel>
         )}
-        <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
-      </WrapperForCarouselAndMap>
+        {!!employees.length && (
+          <DeleteAllButtonControl>
+            <ButtonEP name="Remove All Employees" isRed onClick={handleOpen} />
+          </DeleteAllButtonControl>
+        )}
 
-      <div>
+        <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
+        {/* {!!employees.length && (
+          <DeleteAllButtonControl>
+          <ButtonEP name="Remove All Employees" isRed onClick={handleOpen} />
+          </DeleteAllButtonControl>
+        )} */}
+      {/* </WrapperForCarouselAndMap> */}
+      {/* <div>
         {!!employees.length && (
           <ModalButtonWrapper>
             <Button variant="outlined" color="error" onClick={handleOpen}>
               Delete all cards
             </Button>
           </ModalButtonWrapper>
-        )}
+        )} */}
 
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="delete-dialog-title"
-          aria-describedby="delete-dialog-description"
-        >
-          <DialogTitle id="delete-dialog-title">Delete All Cards?</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="delete-dialog-description">
-              Are you sure you want to delete all cards? This action cannot be
-              undone.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Cancel
-            </Button>
-            <Button onClick={handleDelete} color="error" variant="contained">
-              Delete
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="delete-dialog-title"
+        aria-describedby="delete-dialog-description"
+      >
+        <DialogTitle id="delete-dialog-title">Delete All Cards?</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="delete-dialog-description">
+            Are you sure you want to delete all cards? This action cannot be
+            undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleDelete} color="error" variant="contained">
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
+      {/* </div> */}
     </EmployeesPageWrapper>
   );
 }

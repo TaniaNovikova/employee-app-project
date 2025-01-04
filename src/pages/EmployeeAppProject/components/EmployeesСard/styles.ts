@@ -4,13 +4,12 @@ import { EMPLOYEE_PROJECT_COLORS } from "enums";
 export const EmployeesCardWrapper = styled.div`
 display: flex;
   flex-direction: column;
-  width: 590px;
+  width: 635px;
   min-height: 441px;
   max-height: fit-content;
   padding: 60px;
   gap: 30px;
   background-color: ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE};
-  border: 1px solid #000000;
   border-radius: 4px;
 `;
 

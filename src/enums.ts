@@ -1,18 +1,15 @@
 export enum EMPLOYEE_PROJECT_COLORS {
   HEADER_WHITE = "#FAF9FF",
-  BLACK = "#000000",
   CARD_WHITE = "#FFFFFF",
   LABELS_GRAY = "#6F6F6F",
   INPUT_BORDERS_GRAY = "#3F3F3F",
   PLACEHOLDER_GRAY = "#1E1E1E",
   PLACEHOLDER_OPACITY = "40%",
   BUTTON_BLUE = "#1F27F5",
-  CARD_TEXT = "#1C1C1C",
   MODAL_BUTTON_BG = "#e8f5e6ce",
   MODAL_BUTTON_TEXT = "#1e3c3a",
-  RED = "#D04648",
-  RED_HOVER= "#7b2c2c"
-
+  BLACK = "#1C1C1C",
+  RED = "#CF0000",
 }
 
 export enum PAGES_PATHS {
@@ -28,5 +25,3 @@ export enum EMPLOYEE_FORM_NAMES {
   POSITION = "jobPosition",
   TERMS_OF_USE = "termsOfUse",
 }
-
-

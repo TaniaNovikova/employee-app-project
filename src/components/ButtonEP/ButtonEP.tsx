@@ -1,4 +1,4 @@
-import { ButtonProps } from "employeeProjectTypes";
+import { ButtonProps } from "types";
 import { StyledButton, ButtonImage } from "./styles";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 

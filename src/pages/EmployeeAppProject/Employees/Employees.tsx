@@ -12,8 +12,7 @@ import {
   DeleteCardButtonControl,
   EmployeesPageWrapper,
   EmployeesWrapper,
-  ModalButtonWrapper,
-  WrapperForCarouselAndMap,
+ 
 } from "./styles";
 import ButtonEP from "components/ButtonEP/ButtonEP";
 import {
@@ -95,7 +94,6 @@ function Employees() {
 
   return (
     <EmployeesPageWrapper>
-      {/* <WrapperForCarouselAndMap> */}
         {!!employees.length && (
           <Carousel>
             <ButtonControl>
@@ -137,31 +135,17 @@ function Employees() {
         )}
 
         <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
-        {/* {!!employees.length && (
-          <DeleteAllButtonControl>
-          <ButtonEP name="Remove All Employees" isRed onClick={handleOpen} />
-          </DeleteAllButtonControl>
-        )} */}
-      {/* </WrapperForCarouselAndMap> */}
-      {/* <div>
-        {!!employees.length && (
-          <ModalButtonWrapper>
-            <Button variant="outlined" color="error" onClick={handleOpen}>
-              Delete all cards
-            </Button>
-          </ModalButtonWrapper>
-        )} */}
-
+   
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="delete-dialog-title"
         aria-describedby="delete-dialog-description"
       >
-        <DialogTitle id="delete-dialog-title">Delete All Cards?</DialogTitle>
+        <DialogTitle id="delete-dialog-title">Delete All Employees?</DialogTitle>
         <DialogContent>
           <DialogContentText id="delete-dialog-description">
-            Are you sure you want to delete all cards? This action cannot be
+            Are you sure you want to remove all employees? This action cannot be
             undone.
           </DialogContentText>
         </DialogContent>

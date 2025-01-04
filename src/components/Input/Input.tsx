@@ -1,6 +1,6 @@
 import "./styles.ts";
 import { ErrorMessage, InputContainer, InputElement, Label } from './styles';
-import { InputProps } from "employeeProjectTypes.js";
+import { InputProps } from "types.js";
 
 function Input({ name, id, type = 'text', placeholder, label, value, onChange, error, min, max, step }: InputProps) {
   // console.log("Input render or re-render");

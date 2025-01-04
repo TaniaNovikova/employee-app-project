@@ -2,8 +2,8 @@ import { ReactNode, useContext, useState } from "react";
 
 import { EmployeeAppContext } from "../contexts/EmployeeAppContext";
 import { v4 } from "uuid";
-import EmployeesCard from "pages/EmployeeAppProject/components/EmployeesСard/EmployeesCard";
-import { EmployeeCardData } from "employeeProjectTypes";
+import EmployeesCard from "components/EmployeesСard/EmployeesCard";
+import { EmployeeCardData } from "types";
 import {
   ButtonControl,
   CardWithButtonWrapper,

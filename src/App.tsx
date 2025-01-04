@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import GlobalStyles from "styles/GlobalStyles";
 
-import CreateEmployee from "pages/EmployeeAppProject/CreateEmployee/CreateEmployee";
-import Employees from "pages/EmployeeAppProject/Employees/Employees";
-import { PagesPaths } from "pages/EmployeeAppProject/Layout/types";
-import Layout from "pages/EmployeeAppProject/Layout/Layout";
+import CreateEmployee from "pages/CreateEmployee/CreateEmployee";
+import Employees from "pages/Employees/Employees";
+import { PagesPaths } from "pages/Layout/types";
+import Layout from "pages/Layout/Layout";
 
 function App() {
   return (

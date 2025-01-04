@@ -1,4 +1,4 @@
-import { EmployeeCardData } from "employeeProjectTypes";
+import { EmployeeCardData } from "types";
 import {
   TextDiv,
   TextLabel,

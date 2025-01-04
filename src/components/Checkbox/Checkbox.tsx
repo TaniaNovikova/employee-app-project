@@ -1,5 +1,5 @@
 import { CheckboxContainer, CheckboxElement, CheckboxLabel} from "./styles";
-import { CheckboxProps } from "employeeProjectTypes";
+import { CheckboxProps } from "types";
 
 function Checkbox({
   id,

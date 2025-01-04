@@ -6,14 +6,14 @@ import { Alert } from "@mui/material";
 import ButtonEP from "components/ButtonEP/ButtonEP";
 import Input from "components/Input/Input";
 import Checkbox from "components/Checkbox/Checkbox";
-import { EmployeeAppContext } from "pages/EmployeeAppProject/contexts/EmployeeAppContext";
+import { EmployeeAppContext } from "pages/contexts/EmployeeAppContext";
 
 import { ButtonEPWrapper, EmployeeFormContainer, InputsContainer, ModalButton } from "./styles";
-import { PagesPaths } from "pages/EmployeeAppProject/Layout/types";
+import { PagesPaths } from "pages/Layout/types";
 import Modal from "components/Modal/Modal";
 import { useNavigate } from "react-router-dom";
 import { EMPLOYEE_FORM_NAMES, EMPLOYEE_PROJECT_COLORS } from "enums";
-import { EmployeeCardData, EmployeeFormValue } from "employeeProjectTypes";
+import { EmployeeCardData, EmployeeFormValue } from "types";
 
 function CreateEmployeeForm() {
   const employeeDataContext = useContext(EmployeeAppContext);

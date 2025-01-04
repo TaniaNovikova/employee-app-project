@@ -6,8 +6,8 @@ export interface LayoutProps {
 }
 
 // export interface EmployeeContextType {
-//   employees: Employee[];
-//   setEmployees: React.Dispatch<SetStateAction<Employee[]>>;
+//   employees: EmployeeCardData[];
+//   setEmployees: React.Dispatch<SetStateAction<EmployeeCardData[]>>;
 // }
 
 export interface EmployeeProjectContextType {

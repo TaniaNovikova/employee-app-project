@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Dialog from "@mui/material/Dialog/Dialog";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 export const EmployeesPageWrapper = styled.div`
@@ -68,3 +69,47 @@ export const CardWithButtonWrapper = styled.div`
   border-radius: 4px;
   background-color: ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE};
 `;
+export const StyledModalWrapper = styled(Dialog)`
+  & .MuiPaper-root {
+    display: flex;
+    gap: 15px;
+    width: fit-content;
+    height: fit-content;
+    padding: 60px;
+  }
+  & #delete-dialog-title {
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
+
+  }
+  & #delete-dialog-description {
+    font-size: 26px;
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
+
+  }
+`;
+
+export const DialogActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ButtonDialogControl = styled.div`
+  width: 200px;
+`;
+export const DialogContent = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0px;
+`;
+
+
+

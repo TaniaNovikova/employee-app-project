@@ -5,8 +5,7 @@ import {
   SetStateAction,
 } from "react";
 
-import { LayoutProps } from "pages/Layout/types";
-import { EmployeeCardData } from "types"
+import { EmployeeCardData, LayoutProps } from "types"
 
 export interface EmployeeContextType {
   employees: EmployeeCardData[];

@@ -13,10 +13,16 @@ export enum EMPLOYEE_PROJECT_COLORS {
 }
 
 export enum PAGES_PATHS {
-  HOME = "/EmployeeProject",
+  HOME = "/",
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
 }
+
+// export enum PagesPaths {
+//   HOME = "/",
+//   CREATE_EMPLOYEES = "/create",
+//   EMPLOYEES = "/employees",
+// }
 
 export enum EMPLOYEE_FORM_NAMES {
   FIRST_NAME = "name",

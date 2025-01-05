@@ -12,13 +12,15 @@ import {
   LogoImg,
   NavigationContainer,
 } from "./styles";
-import { LayoutProps, PagesPaths } from "./types";
+import { LayoutProps } from "types";
+import { PAGES_PATHS } from "enums";
+
 
 function Layout({ children }: LayoutProps) {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
-    navigate(PagesPaths.HOME);
+    navigate(PAGES_PATHS.HOME);
   };
 
   return (
@@ -37,7 +39,7 @@ function Layout({ children }: LayoutProps) {
                 fontWeight: isActive ? "bold" : "normal",
                 textDecoration: isActive ? "underline" : "none",
               })}
-              to={PagesPaths.CREATE_EMPLOYEES}
+              to={PAGES_PATHS.CREATE_EMPLOYEES}
             >
               Create Employee
             </Link>
@@ -46,7 +48,7 @@ function Layout({ children }: LayoutProps) {
                 fontWeight: isActive ? "bold" : "normal",
                 textDecoration: isActive ? "underline" : "none",
               })}
-              to={PagesPaths.EMPLOYEES}
+              to={PAGES_PATHS.EMPLOYEES}
             >
               Employees
             </Link>

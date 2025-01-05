@@ -5,8 +5,8 @@ import GlobalStyles from "styles/GlobalStyles";
 
 import CreateEmployee from "pages/CreateEmployee/CreateEmployee";
 import Employees from "pages/Employees/Employees";
-import { PagesPaths } from "pages/Layout/types";
 import Layout from "pages/Layout/Layout";
+import { PAGES_PATHS } from "enums";
 
 function App() {
   return (
@@ -14,30 +14,17 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path={PagesPaths.HOME}></Route>
+          <Route path={PAGES_PATHS.HOME}></Route>
           <Route
-            path={PagesPaths.CREATE_EMPLOYEES}
+            path={PAGES_PATHS.CREATE_EMPLOYEES}
             element={<CreateEmployee />}
           />
-          <Route path={PagesPaths.EMPLOYEES} element={<Employees />} />
+          <Route path={PAGES_PATHS.EMPLOYEES} element={<Employees />} />
           <Route path="*" element="Page not found" />
         </Routes>
       </Layout>
 
-      {/* <Lesson06 /> */}
-      {/* <Lesson07 /> */}
-      {/* <Lesson08 /> */}
-      {/* <Lesson09 /> */}
-      {/* <Lesson10 /> */}
-      {/* <Lesson11 /> */}
-      {/* <Lesson13 /> */}
-      {/* <Homework06 /> */}
-      {/* <Homework07 /> */}
-      {/* <Homework08 /> */}
-      {/* <Homework09 /> */}
-      {/* <Homework11 /> */}
-      {/* <Homework13 /> */}
-      {/* <Consultation03 /> */}
+      
     </BrowserRouter>
   );
 }

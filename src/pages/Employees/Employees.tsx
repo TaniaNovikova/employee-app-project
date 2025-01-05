@@ -12,17 +12,13 @@ import {
   DeleteCardButtonControl,
   EmployeesPageWrapper,
   EmployeesWrapper,
- 
-} from "./styles";
-import ButtonEP from "components/ButtonEP/ButtonEP";
-import {
-  Button,
-  Dialog,
+  StyledModalWrapper,
   DialogActions,
   DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@mui/material";
+  ButtonDialogControl,
+} from "./styles";
+import ButtonEP from "components/ButtonEP/ButtonEP";
+import { DialogContentText, DialogTitle } from "@mui/material";
 
 function Employees() {
   const { employees, setEmployees } = useContext(EmployeeAppContext);
@@ -94,55 +90,55 @@ function Employees() {
 
   return (
     <EmployeesPageWrapper>
-        {!!employees.length && (
-          <Carousel>
-            <ButtonControl>
-              <ButtonEP name="<" onClick={onPrevClick} />
-            </ButtonControl>
+      {!!employees.length && (
+        <Carousel>
+          <ButtonControl>
+            <ButtonEP name="<" onClick={onPrevClick} />
+          </ButtonControl>
 
-            <CardWithButtonWrapper key={v4()}>
-              <EmployeesCard
-                name={employees[index].name}
-                surName={employees[index].surName}
-                age={employees[index].age}
-                jobPosition={employees[index].jobPosition}
-                id={employees[index].id}
-                slug={employees[index].slug}
+          <CardWithButtonWrapper key={v4()}>
+            <EmployeesCard
+              name={employees[index].name}
+              surName={employees[index].surName}
+              age={employees[index].age}
+              jobPosition={employees[index].jobPosition}
+              id={employees[index].id}
+              slug={employees[index].slug}
+            />
+            <DeleteCardButtonControl>
+              <ButtonEP
+                name="Delete"
+                isRed
+                onClick={() => {
+                  onDeleteCardByIndex(
+                    employees.indexOf(employees[index]),
+                    employees[index].id
+                  );
+                }}
               />
-              <DeleteCardButtonControl>
-                <ButtonEP
-                  name="Delete"
-                  isRed
-                  onClick={() => {
-                    onDeleteCardByIndex(
-                      employees.indexOf(employees[index]),
-                      employees[index].id
-                    );
-                  }}
-                />
-              </DeleteCardButtonControl>
-            </CardWithButtonWrapper>
+            </DeleteCardButtonControl>
+          </CardWithButtonWrapper>
 
-            <ButtonControl>
-              <ButtonEP name=">" onClick={onNextClick} />
-            </ButtonControl>
-          </Carousel>
-        )}
-        {!!employees.length && (
-          <DeleteAllButtonControl>
-            <ButtonEP name="Remove All Employees" isRed onClick={handleOpen} />
-          </DeleteAllButtonControl>
-        )}
+          <ButtonControl>
+            <ButtonEP name=">" onClick={onNextClick} />
+          </ButtonControl>
+        </Carousel>
+      )}
+      {!!employees.length && (
+        <DeleteAllButtonControl>
+          <ButtonEP name="Remove All Employees" isRed onClick={handleOpen} />
+        </DeleteAllButtonControl>
+      )}
 
-        <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
-   
-      <Dialog
+      <EmployeesWrapper>{employeesCardsMap(employees)}</EmployeesWrapper>
+
+      <StyledModalWrapper
         open={open}
         onClose={handleClose}
         aria-labelledby="delete-dialog-title"
         aria-describedby="delete-dialog-description"
       >
-        <DialogTitle id="delete-dialog-title">Delete All Employees?</DialogTitle>
+        <DialogTitle>Delete All Employees?</DialogTitle>
         <DialogContent>
           <DialogContentText id="delete-dialog-description">
             Are you sure you want to remove all employees? This action cannot be
@@ -150,15 +146,14 @@ function Employees() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleDelete} color="error" variant="contained">
-            Delete
-          </Button>
+          <ButtonDialogControl>
+            <ButtonEP onClick={handleClose} name="Cansel" />
+          </ButtonDialogControl>
+          <ButtonDialogControl>
+            <ButtonEP onClick={handleDelete} name="Delete" isRed />
+          </ButtonDialogControl>
         </DialogActions>
-      </Dialog>
-      {/* </div> */}
+      </StyledModalWrapper>
     </EmployeesPageWrapper>
   );
 }

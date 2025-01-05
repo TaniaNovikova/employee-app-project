@@ -2,36 +2,28 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useContext, useState } from "react";
 import { Alert } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import ButtonEP from "components/ButtonEP/ButtonEP";
 import Input from "components/Input/Input";
 import Checkbox from "components/Checkbox/Checkbox";
-import { EmployeeAppContext } from "pages/contexts/EmployeeAppContext";
-
-import { ButtonEPWrapper, EmployeeFormContainer, InputsContainer, ModalButton } from "./styles";
-import { PagesPaths } from "pages/Layout/types";
 import Modal from "components/Modal/Modal";
-import { useNavigate } from "react-router-dom";
-import { EMPLOYEE_FORM_NAMES, EMPLOYEE_PROJECT_COLORS } from "enums";
+
+import { EmployeeAppContext } from "pages/contexts/EmployeeAppContext";
 import { EmployeeCardData, EmployeeFormValue } from "types";
+
+import { EMPLOYEE_FORM_NAMES, PAGES_PATHS } from "enums";
+import { EmployeeFormContainer, InputsContainer, ModalButton } from "./styles";
 
 function CreateEmployeeForm() {
   const employeeDataContext = useContext(EmployeeAppContext);
   const [isModalOpen, setModalOpen] = useState<boolean>(false);
-  const [employeeCardData, setEmployeeCardData] = useState<EmployeeCardData>({
-    name: "",
-    surName: "",
-    age: "",
-    jobPosition: "",
-    id: 0,
-    slug: "0",
-  });
 
   const navigate = useNavigate();
 
   const onModalClose = () => {
     setModalOpen(false);
-    navigate(PagesPaths.EMPLOYEES);
+    navigate(PAGES_PATHS.EMPLOYEES);
   };
 
   const shema = Yup.object().shape({
@@ -86,7 +78,6 @@ function CreateEmployeeForm() {
     validationSchema: shema,
     validateOnChange: false,
     // validateOnMount: true,
-
 
     onSubmit: (values, helpers) => {
       employeeDataContext.setEmployees((prevValue: EmployeeCardData[]) => {
@@ -160,11 +151,11 @@ function CreateEmployeeForm() {
           type="checkbox"
         />
       </InputsContainer>
-        <ButtonEP
-          name="Create"
-          type="submit"
-          disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
-        />
+      <ButtonEP
+        name="Create"
+        type="submit"
+        disabled={!formik.values[EMPLOYEE_FORM_NAMES.TERMS_OF_USE]}
+      />
       <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
         <Alert severity="success">Employee card is created</Alert>
         <ModalButton onClick={onModalClose}>Show Card</ModalButton>

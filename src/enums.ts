@@ -16,13 +16,9 @@ export enum PAGES_PATHS {
   HOME = "/",
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
+  MANAGE_EMPLOYEES= "/manage"
 }
 
-// export enum PagesPaths {
-//   HOME = "/",
-//   CREATE_EMPLOYEES = "/create",
-//   EMPLOYEES = "/employees",
-// }
 
 export enum EMPLOYEE_FORM_NAMES {
   FIRST_NAME = "name",

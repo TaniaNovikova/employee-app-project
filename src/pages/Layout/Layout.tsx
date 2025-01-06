@@ -52,6 +52,15 @@ function Layout({ children }: LayoutProps) {
             >
               Employees
             </Link>
+            <Link
+              style={({ isActive }) => ({
+                fontWeight: isActive ? "bold" : "normal",
+                textDecoration: isActive ? "underline" : "none",
+              })}
+              to={PAGES_PATHS.MANAGE_EMPLOYEES}
+            >
+              Manage Employees
+            </Link>
           </NavigationContainer>
         </Header>
         <Main>{children}</Main>

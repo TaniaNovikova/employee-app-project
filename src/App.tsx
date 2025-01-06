@@ -7,6 +7,8 @@ import CreateEmployee from "pages/CreateEmployee/CreateEmployee";
 import Employees from "pages/Employees/Employees";
 import Layout from "pages/Layout/Layout";
 import { PAGES_PATHS } from "enums";
+import ManageEmployees from "pages/ManageEmployees/ManageEmployees";
+import EmployeesInfo from "pages/EmployeesInfo/EmployeesInfo";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             element={<CreateEmployee />}
           />
           <Route path={PAGES_PATHS.EMPLOYEES} element={<Employees />} />
+          <Route path={PAGES_PATHS.MANAGE_EMPLOYEES} element={<ManageEmployees />} />
+          <Route path="/manage/:slug"  element={<EmployeesInfo />} />
           <Route path="*" element="Page not found" />
         </Routes>
       </Layout>

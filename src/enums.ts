@@ -10,6 +10,8 @@ export enum EMPLOYEE_PROJECT_COLORS {
   MODAL_BUTTON_TEXT = "#1e3c3a",
   BLACK = "#1C1C1C",
   RED = "#CF0000",
+  DROP_DOWN_TEXT="#808080",
+  DROP_DOWN_HOVER_TEXT="#fff"
 }
 
 export enum PAGES_PATHS {

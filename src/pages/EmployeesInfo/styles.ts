@@ -34,3 +34,20 @@ export const TextContent = styled.p`
   font-family: Lato, Arial, Helvetica, sans-serif;
   color: ${EMPLOYEE_PROJECT_COLORS.PLACEHOLDER_GRAY};
 `;
+export const GoBackButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+`;
+
+export const ButtonImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+`;

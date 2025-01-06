@@ -55,5 +55,5 @@ export const Main = styled.main`
   align-items: center;
   flex: 1;
   padding: 40px;
-  color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
+  /* color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE}; */
 `;

@@ -1,10 +1,10 @@
-import { useNavigate, useParams, useLocation} from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import queryString from "query-string"
-import {employeesData} from "assets/data"
-
-import BackArrow from "assets/back.jpg";
-
+import queryString from "query-string";
+import { employeesData } from "assets/data";
+import { IconButton } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import BackArrow from "assets/goBack.png";
 
 import {
   TextDiv,
@@ -14,11 +14,14 @@ import {
   GoBackButton,
   ButtonImage,
 } from "./styles";
-
+import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
 function EmployeesInfo() {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
+
+  
+
 
   const params = useParams();
   console.log(params);
@@ -27,7 +30,7 @@ function EmployeesInfo() {
     (employeeObj) => employeeObj.slug === params.slug
   );
 
-    //если страница служащего не найдена,
+  //если страница служащего не найдена,
   // то пользователь перенаправляется на ту страницу,
   //  на которой есть ссылки на существующие страницы,
   //  т. е. на уровень выше ".." относительно того места,
@@ -35,11 +38,9 @@ function EmployeesInfo() {
 
   const location = useLocation();
   console.log(location);
-  
 
   const query = queryString.parse(location.pathname);
   console.log(query);
-  
 
   useEffect(() => {
     if (!employeeData) {
@@ -66,9 +67,20 @@ function EmployeesInfo() {
         <TextLabel>Job Position</TextLabel>
         <TextContent>{employeeData?.jobPosition}</TextContent>
       </TextDiv>
-      <GoBackButton onClick={goBack}>
+      {/* <GoBackButton onClick={goBack}>
           <ButtonImage src={BackArrow} />
-        </GoBackButton>
+        </GoBackButton> */}
+      <IconButton onClick={goBack} aria-label="go back"
+>
+        <ArrowBackIcon  sx={{ 
+        color: `${EMPLOYEE_PROJECT_COLORS.BLACK}`, 
+        fontSize: '40px',
+        fontWeight: 'bolder',
+        transition: 'color 0.3s', // Добавляем анимацию цвета
+        '&:hover': { color: 'darkblue' }, // Цвет при наведении
+
+      }}/>
+      </IconButton>
     </EmployeesCardWrapper>
   );
 }

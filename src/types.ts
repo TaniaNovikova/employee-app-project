@@ -5,10 +5,6 @@ export interface LayoutProps {
   children: ReactNode;
 }
 
-// export interface EmployeeContextType {
-//   employees: EmployeeCardData[];
-//   setEmployees: React.Dispatch<SetStateAction<EmployeeCardData[]>>;
-// }
 
 export interface EmployeeProjectContextType {
   employeesCardData: EmployeeCardData[];
@@ -20,7 +16,7 @@ export interface EmployeeProjectContextType {
 export interface Employee {
   name: string;
   surName: string;
-  age?: number |undefined;
+  age?: number |string;
   jobPosition: string;
 }
 

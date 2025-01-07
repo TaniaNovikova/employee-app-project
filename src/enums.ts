@@ -20,7 +20,7 @@ export enum EMPLOYEE_PROJECT_COLORS {
 }
 
 export enum PAGES_PATHS {
-  HOME = "/",
+  HOME = "/employee-app-project",
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
   MANAGE_EMPLOYEES = "/manage",

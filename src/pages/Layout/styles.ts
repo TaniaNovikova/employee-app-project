@@ -24,8 +24,9 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.div`
-  height: 100px;
-  width: 120px;
+  height: 90px;
+  width: 90px;
+  border: 4px double ${EMPLOYEE_PROJECT_COLORS.LOGO_TURKIS};
   border-radius: 50%;
   cursor: pointer;
 `;

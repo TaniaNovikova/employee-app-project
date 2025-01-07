@@ -7,6 +7,7 @@ export const EmployeeInfoContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 40px;
 `;
 
 export const EmployeesCardWrapper = styled.div`

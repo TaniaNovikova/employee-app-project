@@ -23,3 +23,7 @@ export const StyledLink = styled(Link)`
     color: #fff;
   }
 `;
+export const StyledParagraph=styled.p`
+display: flex;
+gap: 40px;
+`

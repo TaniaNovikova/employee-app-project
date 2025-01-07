@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import queryString from "query-string";
 
 import { employeesData } from "assets/data";
-import { ClientsContaiter, StyledLink } from "./styles";
+import { ClientsContaiter, StyledLink, StyledParagraph } from "./styles";
 import { EmployeeCardData } from "types";
 import Dropdown from "components/Dropdown/Dropdown";
 import DropdownLinkItems from "components/DropdownLinkItems/DropdownLinkItems";
@@ -92,7 +92,7 @@ function ManageEmployees() {
   const EmployeesMap = sortedEmployees.map((employeeObj) => {
     return (
       <StyledLink key={employeeObj.id} to={employeeObj.slug}>
-        {`${employeeObj.surName} ${employeeObj.name};      ${employeeObj.jobPosition};     ${employeeObj.id}`}
+       <StyledParagraph><span> {employeeObj.id}</span> <span>{`${employeeObj.surName} ${employeeObj.name}`}</span>  <span> {employeeObj.jobPosition}</span> </StyledParagraph>
       </StyledLink>
     );
   });

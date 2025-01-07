@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/tanianovikova.github.io/employee-app-project/static/css/main.095b8e00.css",
-    "main.js": "/tanianovikova.github.io/employee-app-project/static/js/main.01762b57.js",
-    "static/js/453.095a4c04.chunk.js": "/tanianovikova.github.io/employee-app-project/static/js/453.095a4c04.chunk.js",
-    "static/media/meeting-business.jpg": "/tanianovikova.github.io/employee-app-project/static/media/meeting-business.84f395cb7a856b2a4d57.jpg",
-    "static/media/lato-latin-400-normal.woff2": "/tanianovikova.github.io/employee-app-project/static/media/lato-latin-400-normal.be36596da218e1eec01c.woff2",
-    "static/media/lato-latin-400-normal.woff": "/tanianovikova.github.io/employee-app-project/static/media/lato-latin-400-normal.190b769c7be76a0f0dbf.woff",
-    "static/media/hr-department.png": "/tanianovikova.github.io/employee-app-project/static/media/hr-department.fd5f8ffcddcc6f8edc26.png",
-    "static/media/lato-latin-ext-400-normal.woff2": "/tanianovikova.github.io/employee-app-project/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
-    "static/media/lato-latin-ext-400-normal.woff": "/tanianovikova.github.io/employee-app-project/static/media/lato-latin-ext-400-normal.221746f6ba5760746446.woff",
-    "index.html": "/tanianovikova.github.io/employee-app-project/index.html",
-    "main.095b8e00.css.map": "/tanianovikova.github.io/employee-app-project/static/css/main.095b8e00.css.map",
-    "main.01762b57.js.map": "/tanianovikova.github.io/employee-app-project/static/js/main.01762b57.js.map",
-    "453.095a4c04.chunk.js.map": "/tanianovikova.github.io/employee-app-project/static/js/453.095a4c04.chunk.js.map"
+    "main.css": "/employee-app-project/static/css/main.2a750e8c.css",
+    "main.js": "/employee-app-project/static/js/main.295cdaea.js",
+    "static/js/453.095a4c04.chunk.js": "/employee-app-project/static/js/453.095a4c04.chunk.js",
+    "static/media/meeting-business.jpg": "/employee-app-project/static/media/meeting-business.84f395cb7a856b2a4d57.jpg",
+    "static/media/lato-latin-400-normal.woff2": "/employee-app-project/static/media/lato-latin-400-normal.be36596da218e1eec01c.woff2",
+    "static/media/lato-latin-400-normal.woff": "/employee-app-project/static/media/lato-latin-400-normal.190b769c7be76a0f0dbf.woff",
+    "static/media/hr-department.png": "/employee-app-project/static/media/hr-department.fd5f8ffcddcc6f8edc26.png",
+    "static/media/lato-latin-ext-400-normal.woff2": "/employee-app-project/static/media/lato-latin-ext-400-normal.361f3dbb9db6a5980326.woff2",
+    "static/media/lato-latin-ext-400-normal.woff": "/employee-app-project/static/media/lato-latin-ext-400-normal.221746f6ba5760746446.woff",
+    "index.html": "/employee-app-project/index.html",
+    "main.2a750e8c.css.map": "/employee-app-project/static/css/main.2a750e8c.css.map",
+    "main.295cdaea.js.map": "/employee-app-project/static/js/main.295cdaea.js.map",
+    "453.095a4c04.chunk.js.map": "/employee-app-project/static/js/453.095a4c04.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.095b8e00.css",
-    "static/js/main.01762b57.js"
+    "static/css/main.2a750e8c.css",
+    "static/js/main.295cdaea.js"
   ]
 }

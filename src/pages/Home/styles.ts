@@ -12,7 +12,7 @@ export const HomeWrapper = styled.div`
   background-repeat: no-repeat; /* Изображение не повторяется */
   padding-top: 40px;
   color: ${EMPLOYEE_PROJECT_COLORS.BACKGR_IMG_GREY};
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 2px 2px black;
 `;
 export const TextWrapper = styled.div`
   position: relative;
@@ -22,7 +22,7 @@ export const TextWrapper = styled.div`
   border: 4px double ${EMPLOYEE_PROJECT_COLORS.LOGO_HELL};
   border-radius: 4px;
   width: fit-content;
-  height: 60px;
+  height: 65px;
   padding-left: 40px;
   padding-right: 70px;
 `;

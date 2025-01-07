@@ -15,6 +15,7 @@ export const LayoutWrapper = styled.div`
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items:center;
   width: 100%;
   height: 100px;
   background-color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
@@ -23,8 +24,8 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.div`
-  height: 70px;
-  width: 70px;
+  height: 100px;
+  width: 120px;
   border-radius: 50%;
   cursor: pointer;
 `;
@@ -54,6 +55,4 @@ export const Main = styled.main`
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 40px;
-  /* color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE}; */
 `;

@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
   justify-content: flex-start;
   gap: 10px;
   align-items: center;
-  background-color: ${EMPLOYEE_PROJECT_COLORS.BUTTON_BLUE};
+  background-color: ${EMPLOYEE_PROJECT_COLORS.LOGO_TURKIS};
   width: 300px;
   height: 70px;
   border-radius: 4px;
@@ -26,16 +26,14 @@ export const StyledButton = styled.button`
   outline: none;
   padding: 2px;
   padding-left: 20px;
-  color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
+  color: ${EMPLOYEE_PROJECT_COLORS.LOGO_HELL};
   font-size: 22px;
   font-family: Lato, Arial, Helvetica, sans-serif;
   font-weight: bold;
   letter-spacing: 2px;
   cursor: pointer;
   margin: 0px;
-  /* &:hover {
-    background-color: #4f6579;
-  } */
+  
 `;
 
 export const UlWrapper = styled.div`
@@ -69,14 +67,14 @@ export const StyledUl = styled.ul`
     width: 20px;
   }
   &::-webkit-scrollbar-track {
-    background: ${EMPLOYEE_PROJECT_COLORS.BLACK};
+    background: ${EMPLOYEE_PROJECT_COLORS.DROP_DOWN_HOVER_TEXT};
     border-radius: 4px;
   }
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(
       90deg,
-      ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE},
-      ${EMPLOYEE_PROJECT_COLORS.BUTTON_BLUE}
+      ${EMPLOYEE_PROJECT_COLORS.LOGO_HELL},
+      ${EMPLOYEE_PROJECT_COLORS.LOGO_TURKIS}
     );
     border-radius: 4px;
     cursor: pointer;
@@ -109,7 +107,7 @@ export const StyledLi = styled.li`
   padding-left: 20px;
   color: ${EMPLOYEE_PROJECT_COLORS.DROP_DOWN_TEXT};
   font-size: 22px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   text-decoration: none;
   line-height: 30px;
   border-radius: 4px;

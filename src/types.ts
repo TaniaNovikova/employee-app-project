@@ -33,6 +33,16 @@ export interface EmployeeCardData{
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+export interface DropdownProps{
+  options: string[] 
+  dropdownName: string;
+  onOptionClick: (option:string) => void;
+}
+
+export interface DropdownLinkItemsProps{
+  options:  JSX.Element[];
+  dropdownLinkItemsName: string;
+}
 export type ButtonType = "button" | "submit" | "reset";
 export interface ButtonProps {
   name: string | undefined;

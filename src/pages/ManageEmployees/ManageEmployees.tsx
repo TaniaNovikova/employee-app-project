@@ -37,10 +37,14 @@ function sortEmployees(employeesData: EmployeeCardData[], key: string) {
 
 function ManageEmployees() {
   const location = useLocation();
+  // console.log(location);
+
   const query = queryString.parse(location.search);
+//  console.log(query);
  
 
   const [sortKey, setSortKey] = useState(query.sort);
+console.log(sortKey);
 
   const onOptionClick = (option: string) => {
     switch (option) {

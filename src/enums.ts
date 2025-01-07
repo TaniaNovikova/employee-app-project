@@ -10,17 +10,21 @@ export enum EMPLOYEE_PROJECT_COLORS {
   MODAL_BUTTON_TEXT = "#1e3c3a",
   BLACK = "#1C1C1C",
   RED = "#CF0000",
-  DROP_DOWN_TEXT="#808080",
-  DROP_DOWN_HOVER_TEXT="#fff"
+  DROP_DOWN_TEXT = "#808080",
+  DROP_DOWN_HOVER_TEXT = "#fff",
+  LOGO_TURKIS = "#2b7b9f",
+  LOGO_HELL = "#e9f0f3",
+  BACKGR_IMG_GREEN="#183849",
+  BACKGR_IMG_GREY="#d2d4d3",
+
 }
 
 export enum PAGES_PATHS {
   HOME = "/",
   CREATE_EMPLOYEES = "/create",
   EMPLOYEES = "/employees",
-  MANAGE_EMPLOYEES= "/manage"
+  MANAGE_EMPLOYEES = "/manage",
 }
-
 
 export enum EMPLOYEE_FORM_NAMES {
   FIRST_NAME = "name",

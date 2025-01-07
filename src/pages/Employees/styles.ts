@@ -7,6 +7,7 @@ export const EmployeesPageWrapper = styled.div`
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  padding: 40px;
 `;
 
 export const EmployeesWrapper = styled.div`

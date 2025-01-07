@@ -9,7 +9,7 @@ export const CheckboxContainer = styled.div`
 
 export const CheckboxLabel = styled.label`
   font-size: 16px;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   color: ${EMPLOYEE_PROJECT_COLORS.LABELS_GRAY};
 `;
 export const CheckboxElement = styled.input`

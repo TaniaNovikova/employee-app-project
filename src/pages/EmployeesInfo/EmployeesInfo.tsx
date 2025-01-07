@@ -4,15 +4,12 @@ import queryString from "query-string";
 import { employeesData } from "assets/data";
 import { IconButton } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-// import BackArrow from "assets/goBack.png";
 
 import {
   TextDiv,
   TextLabel,
   TextContent,
   EmployeesCardWrapper,
-  GoBackButton,
-  ButtonImage,
 } from "./styles";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
@@ -67,9 +64,7 @@ function EmployeesInfo() {
         <TextLabel>Job Position</TextLabel>
         <TextContent>{employeeData?.jobPosition}</TextContent>
       </TextDiv>
-      {/* <GoBackButton onClick={goBack}>
-          <ButtonImage src={BackArrow} />
-        </GoBackButton> */}
+     
       <IconButton onClick={goBack} aria-label="go back"
 >
         <ArrowBackIcon  sx={{ 

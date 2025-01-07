@@ -22,7 +22,7 @@ export const StyledButton = styled("button")<StyledButtonProps>`
   border-radius: 4px;
   font-size: 20px;
   font-weight: 600;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
   color: ${({ $fontColor }) => $fontColor};
   background-color: ${({ $isRed, $backgroundColor }) =>
     getButtonColor($isRed, $backgroundColor)};

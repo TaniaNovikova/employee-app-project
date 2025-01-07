@@ -9,6 +9,7 @@ import Layout from "pages/Layout/Layout";
 import { PAGES_PATHS } from "enums";
 import ManageEmployees from "pages/ManageEmployees/ManageEmployees";
 import EmployeesInfo from "pages/EmployeesInfo/EmployeesInfo";
+import Home from "pages/Home/Home";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path={PAGES_PATHS.HOME}></Route>
+          <Route path={PAGES_PATHS.HOME} element={<Home />}/>
           <Route
             path={PAGES_PATHS.CREATE_EMPLOYEES}
             element={<CreateEmployee />}

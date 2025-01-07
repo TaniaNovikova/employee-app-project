@@ -9,7 +9,7 @@ export const EmployeeFormContainer = styled.form`
   padding: 60px;
   border: 1px solid black;
   border-radius: 4px;
-  font-family: Lato, Geneva, Tahoma, sans-serif;
+  font-family: "Lato", Geneva, Tahoma, sans-serif;
   background-color: ${EMPLOYEE_PROJECT_COLORS.CARD_WHITE};
 `;
 

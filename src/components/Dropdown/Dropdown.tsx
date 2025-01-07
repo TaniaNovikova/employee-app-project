@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import UpTriangle2 from "components/UpTriangle2/UpTriangle2";
 import { v4 } from "uuid";
-import { DropdownProps } from "./types";
+import { DropdownProps } from "types";
 
 function Dropdown({ options, dropdownName, onOptionClick }: DropdownProps) {
   const [isExpanded, setIsExpanded] = useState(false);

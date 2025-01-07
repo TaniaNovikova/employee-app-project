@@ -3,13 +3,16 @@ import { Global, css } from "@emotion/react";
 export const GlobalAppStyles = css`
   * {
     box-sizing: border-box;
-    
   }
 
   html,
   body {
     height: 100%;
     margin: 0;
+  }
+
+  body {
+    font-family: "Lato", sans-serif;
   }
 
   * {
@@ -26,7 +29,7 @@ export const GlobalAppStyles = css`
   li,
   a {
     margin: 0;
-    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
   }
 
   #root {

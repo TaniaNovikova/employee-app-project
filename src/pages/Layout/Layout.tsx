@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import EmployeeAppContextProvider from "pages/contexts/EmployeeAppContext";
-import logoTN from "assets/LogoTN.png"
+import logoTN from "assets/hr-department.png"
 
 import {
   LayoutWrapper,

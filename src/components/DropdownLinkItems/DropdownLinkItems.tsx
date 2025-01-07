@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import UpTriangle2 from "components/UpTriangle2/UpTriangle2";
 import { v4 } from "uuid";
-import { DropdownLinkItemsProps } from "./types";
+import { DropdownLinkItemsProps } from "types";
 
 function DropdownLinkItems({
   options,

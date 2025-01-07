@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import { NavLink } from "react-router-dom";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
-
-
 export const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,11 +13,13 @@ export const LayoutWrapper = styled.div`
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
   width: 100%;
-  height: 100px;
+  padding-top: 25px;
+  padding-right: 96px;
+  padding-bottom: 25px;
+  padding-left: 81px;
   background-color: ${EMPLOYEE_PROJECT_COLORS.HEADER_WHITE};
-  padding: 20px 84px;
   color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
 `;
 
@@ -35,7 +35,7 @@ export const LogoImg = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-`
+`;
 
 export const NavigationContainer = styled.nav`
   display: flex;
@@ -46,8 +46,9 @@ export const NavigationContainer = styled.nav`
 
 export const Link = styled(NavLink)`
   color: ${EMPLOYEE_PROJECT_COLORS.BLACK};
-  font-size: 20px;
-  font-weight: normal;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
   text-decoration: none;
 `;
 

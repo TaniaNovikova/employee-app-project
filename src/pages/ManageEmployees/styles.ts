@@ -9,6 +9,7 @@ export const ClientsContaiter = styled.div`
   width: 1200px;
   height: 450px;
   font-size: 30px;
+  padding: 40px;
   /* border: 5px solid wheat; */
 `;
 export const StyledLink = styled(Link)`

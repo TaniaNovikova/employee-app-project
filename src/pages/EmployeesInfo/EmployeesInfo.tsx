@@ -10,6 +10,7 @@ import {
   TextLabel,
   TextContent,
   EmployeesCardWrapper,
+  EmployeeInfoContainer,
 } from "./styles";
 import { EMPLOYEE_PROJECT_COLORS } from "enums";
 
@@ -45,6 +46,7 @@ function EmployeesInfo() {
     }
   }, [employeeData, navigate]);
   return (
+    <EmployeeInfoContainer>
     <EmployeesCardWrapper>
       <TextDiv>
         <TextLabel>Name</TextLabel>
@@ -77,6 +79,7 @@ function EmployeesInfo() {
       }}/>
       </IconButton>
     </EmployeesCardWrapper>
+    </EmployeeInfoContainer>
   );
 }
 

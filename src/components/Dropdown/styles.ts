@@ -6,10 +6,11 @@ export const StyledBlock = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 350px;
+  width: 300px;
   height: fit-content;
   padding: 0px;
   gap: 10px;
+  /* border: 2px solid blue; */
 `;
 
 export const StyledButton = styled.button`
@@ -18,7 +19,7 @@ export const StyledButton = styled.button`
   gap: 10px;
   align-items: center;
   background-color: ${EMPLOYEE_PROJECT_COLORS.LOGO_TURKIS};
-  width: 220px;
+  width: 200px;
   height: 70px;
   border-radius: 4px;
   border: transparent;
@@ -39,6 +40,7 @@ export const StyledButton = styled.button`
 
 export const UlWrapper = styled.div`
   position: relative;
+  width: 100%;
   border-radius: 6px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding-top: 10px;
@@ -57,7 +59,7 @@ export const StyledUl = styled.ul`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  max-height: 250px;
+  max-height: 500px;
   overflow-y: auto;
   gap: 0px;
   margin: 0px;
@@ -74,6 +76,7 @@ export const StyledLiWrapper = styled.div`
   border: 4px;
   &:hover {
     background-color: #0388ff;
+    background-color: #2b7b9f;
     color: #fff;
   }
 `;

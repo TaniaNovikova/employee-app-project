@@ -6,10 +6,13 @@ export const ClientsContaiter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 1200px;
-  height: 450px;
+  width: 100%;
+  height: 100vh;
   font-size: 30px;
-  padding: 40px;
+  padding-top: 25px;
+  padding-right: 96px;
+  padding-bottom: 25px;
+  padding-left: 81px;
   /* border: 5px solid wheat; */
 `;
 export const StyledLink = styled(Link)`
@@ -19,12 +22,11 @@ export const StyledLink = styled(Link)`
   font-size: 22px;
   font-family: Lato, Arial, Helvetica, sans-serif;
   text-decoration: none;
-  line-height: 30px;
   &:hover {
     color: #fff;
   }
 `;
-export const StyledParagraph=styled.p`
-display: flex;
-gap: 40px;
-`
+export const StyledParagraph = styled.p`
+  display: flex;
+  gap: 40px;
+`;
